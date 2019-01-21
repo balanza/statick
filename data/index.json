@@ -1,0 +1,7 @@
+{
+    "title": "Welcome to your website!",
+    "features":[
+        {"name": "Handlebars.js", "link": "https://handlebarsjs.com/"},
+        {"name": "Less.js", "link": "https://lessjs.org/"}
+    ]
+}

@@ -1,0 +1,16 @@
+pipelines:
+  default:
+    - step:
+        name: Build
+        image: node:10
+        script:
+          - npm install
+          - npm run build
+        artifacts:
+          - dist/**
+    - step:
+        # set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY as environment variables
+        name: Deploy to S3
+        image: atlassian/pipelines-awscli
+        script:
+          - aws s3 sync --delete ./dist  s3://example.com
